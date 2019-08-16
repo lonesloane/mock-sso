@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-16" ?>
+<UserInfo>
+    <SSOInfo />
+    <PersonalizedAccount>
+        <Login>Elisabeth.DaCruz@ocde-portugal.com</Login>
+        <SSOID-Personalized>9999998</SSOID-Personalized>
+        <whenCreated>6/2/2014 10:23:36 AM</whenCreated>
+        <TitleKey>1</TitleKey>
+        <TitleKeyEN>Mrs.</TitleKeyEN>
+        <TitleKeyFR>Mme.</TitleKeyFR>
+        <FirstName>Elisabeth</FirstName>
+        <MiddleName />
+        <LastName>Da Cruz</LastName>
+        <CompanyName>OECD</CompanyName>
+        <MinistryID />
+        <MinistryLocationID />
+        <OrganisationDescriptionKey />
+        <OrganisationDescriptionKeyEN />
+        <OrganisationDescriptionKeyFR />
+        <JobTitleKey />
+        <JobTitleKeyEN />
+        <JobTitleKeyFR />
+        <JobFunctionKey />
+        <JobFunctionKeyEN />
+        <JobFunctionKeyFR />
+        <Department>EXD/DKI/DPS</Department>
+        <BusinessAddressStreet>2 rue André-Pascal</BusinessAddressStreet>
+        <BusinessAddressStreet2 />
+        <BusinessAddressPostOfficeBox />
+        <BusinessAddressCity>Paris</BusinessAddressCity>
+        <BusinessAddressState />
+        <BusinessAddressPostalCode>75016</BusinessAddressPostalCode>
+        <Email1Address>Elisabeth.DaCruz@oecd.org</Email1Address>
+        <BusinessTelephoneNumber>+(33-1) 45 24 14 70</BusinessTelephoneNumber>
+        <BusinessFaxNumber />
+        <HomeTelephoneNumber />
+        <Language>1</Language>
+        <LanguageEN>French</LanguageEN>
+        <LanguageFR>Français</LanguageFR>
+        <BusinessAddressCountry>68</BusinessAddressCountry>
+        <BusinessAddressCountryEN>France</BusinessAddressCountryEN>
+        <BusinessAddressCountryFR>France</BusinessAddressCountryFR>
+        <BusinessAddressCountryISO3>FRA</BusinessAddressCountryISO3>
+        <CstOtherLanguage />
+        <CstOtherLanguageEN />
+        <CstOtherLanguageFR />
+        <AutoLogin>False</AutoLogin>
+    </PersonalizedAccount>
+    <InstitutionalAccount>
+        <SSOID-Institutional />
+        <whenCreated />
+        <CountryEN />
+        <CountryFR />
+        <EmailAddress />
+        <AccountType />
+    </InstitutionalAccount>
+</UserInfo>
