@@ -2,7 +2,7 @@ import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
-SSO_SERVICE_HOST = os.environ.get("SSO_SERVICE_HOST", "localhost")
+SSO_SERVICE_HOST = os.environ.get("SSO_SERVICE_HOST", "0.0.0.0")
 SSO_SERVICE_PORT = os.environ.get("SSO_SERVICE_PORT", "8086")
 
 LOGGING_LEVEL = os.environ.get('LOGGING_LEVEL', 'DEBUG')
