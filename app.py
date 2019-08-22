@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, abort, request, make_response
+from flask_cors import CORS, cross_origin
 
 import init
 import xmltodict
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True, methods=['GET', 'POST', 'OPTIONS'])
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.errorhandler(404)
@@ -32,8 +35,8 @@ def root():
 
     :return:
     """
-    appId = request.args.get('appId', default=0, type=int)
-    if appId:
+    app_id = request.args.get('appId', default=0, type=int)
+    if app_id:
         return '', 302  # Found
     else:
         return app.send_static_file('index.html')
@@ -41,8 +44,8 @@ def root():
 
 @app.route('/token', methods=['GET'])
 def get_token():
-    appId = request.args.get('appId', default=0, type=int)
-    if int(appId) == 18020:
+    app_id = request.args.get('appId', default=0, type=int)
+    if int(app_id) == 18020:
         return str(111111111)
     else:
         abort(400)
@@ -50,14 +53,14 @@ def get_token():
 
 @app.route('/deleg/token', methods=['GET'])
 def get_deleg_token():
-    appId = request.args.get('appId', default=0, type=int)
-    if int(appId) == 18020:
+    app_id = request.args.get('appId', default=0, type=int)
+    if int(app_id) == 18020:
         return str(337399158)
     else:
         abort(400)
 
 
-@app.route('/GetToken/WsGetToken.asmx', methods=['GET'])
+@app.route('/GetToken/WsGetToken.asmx', methods=['GET', 'POST'])
 def ws_get_token():
     """
 
@@ -66,8 +69,13 @@ def ws_get_token():
     data = request.data
 
     if data:
-        dict_data = xmltodict.parse(data, process_namespaces=False)
-        token_id = dict_data['SOAP-ENV:Envelope']['SOAP-ENV:Body']['GetToken']['pstrTokenID']
+        namespaces = {
+            'http://www.oecd.org/SSO30/': None,
+            'http://schemas.xmlsoap.org/soap/envelope/': 'S'
+        }
+
+        dict_data = xmltodict.parse(data, process_namespaces=True, namespaces=namespaces)
+        token_id = dict_data['S:Envelope']['S:Body']['GetToken']['pstrTokenID']
         if int(token_id) == 111111111:
             return app.send_static_file('WsGetToken_9999999.xml')
         elif int(token_id) == 337399158:
