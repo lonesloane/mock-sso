@@ -32,7 +32,11 @@ def root():
 
     :return:
     """
-    return app.send_static_file('index.html')
+    appId = request.args.get('appId', default=0, type=int)
+    if appId:
+        return '', 302  # Found
+    else:
+        return app.send_static_file('index.html')
 
 
 @app.route('/token', methods=['GET'])
